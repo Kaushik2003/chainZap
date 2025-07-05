@@ -1,10 +1,10 @@
 [package]
 name = "will_contract"
 version = "1.0.0"
-authors = []
+authors = ["PepsiCola.Kulfi"]
 
 [addresses]
-will_contract_addr = "0x9339f4839927957aaf6f8a6e0c1731b837d41b565ce53efe531bffc3e429a75e"
+will_contract_addr = "0x4d0dd395d24ae71124626552ba8bee59ab6e83a2404040abad4d932b2f55aa07"
 
 [dependencies]
 AptosFramework = { git = "https://github.com/aptos-labs/aptos-framework.git", rev = "mainnet", subdir = "aptos-framework" }

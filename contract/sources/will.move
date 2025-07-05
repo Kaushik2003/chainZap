@@ -7,7 +7,7 @@ module will_contract_addr::will {
     use std::option::{Self, Option};
     use std::vector;
     
-    const DEFAULT_TIMEOUT: u64 = 120; // 2 minutes
+    const DEFAULT_TIMEOUT: u64 = 10; // 10 secs
     const ERR_ALREADY_EXISTS: u64 = 1;
     const ERR_NOT_FOUND: u64 = 2;
     const ERR_TOO_SOON: u64 = 3;
