@@ -7,12 +7,12 @@ module will_contract_addr::will {
     use std::option::{Self, Option};
     use std::vector;
     
-    const DEFAULT_TIMEOUT: u64 = 120; // 2 minutes
     const ERR_ALREADY_EXISTS: u64 = 1;
     const ERR_NOT_FOUND: u64 = 2;
     const ERR_TOO_SOON: u64 = 3;
     const ERR_NOT_RECIPIENT: u64 = 4;
     const ERR_REGISTRY_NOT_INITIALIZED: u64 = 5;
+    const ERR_INVALID_TIMEOUT: u64 = 6;
     
     struct Will has copy, drop, store {
         owner: address,
@@ -54,11 +54,15 @@ module will_contract_addr::will {
         account: &signer,
         recipient: address,
         amount: u64,
+        timeout_secs: u64, // User-specified timeout in seconds
         registry_addr: address // Address where the global registry is stored
     ) acquires WillState, GlobalWillRegistry {
         let owner = signer::address_of(account);
         let state = borrow_global_mut<WillState>(owner);
         assert!(!table::contains(&state.wills, owner), ERR_ALREADY_EXISTS);
+        
+        // Validate timeout (must be greater than 0)
+        assert!(timeout_secs > 0, ERR_INVALID_TIMEOUT);
         
         let now = timestamp::now_seconds();
         
@@ -70,7 +74,7 @@ module will_contract_addr::will {
             recipient,
             amount,
             last_ping_time: now,
-            timeout_secs: DEFAULT_TIMEOUT,
+            timeout_secs, // Use user-specified timeout
         });
         
         // Update global registry

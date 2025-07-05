@@ -7,11 +7,9 @@ import { WILL_ABI } from "@/utils/will_abi"
 import { motion } from "framer-motion"
 import { Poppins } from "next/font/google"
 import { cn } from "@/lib/utils"
- // @ts-ignore
 import { FileText, Wallet, RefreshCw, Shield, Gift, AlertCircle, CheckCircle, Loader2, Activity, Users, UserCheck, UserPlus, ListOrdered, ClipboardCopy, Globe2 } from "lucide-react"
 import { WalletSelector } from "@/components/WalletSelector"
 import { surfClient } from "@/utils/surfClient"
-import { MODULE_ADDRESS } from "@/constants"
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -31,25 +29,18 @@ export default function WillManager() {
   const [status, setStatus] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
-   // @ts-ignore
   const [copied, setCopied] = useState(false)
-   // @ts-ignore
   const [will, setWill] = useState<any>(null)
-   // @ts-ignore
-  const [willsForRecipient, setWillsForRecipient] = useState<any[]>([]) // @ts-ignore
+  const [willsForRecipient, setWillsForRecipient] = useState<any[]>([])
   const [claimableWills, setClaimableWills] = useState<any[]>([])
-   // @ts-ignore
   const [willCount, setWillCount] = useState<number | null>(null)
-   // @ts-ignore
   const abiClient = client?.useABI(WILL_ABI)
   const ownerAddress = account?.address?.toStringLong() || ""
 
-  // Utility 
- // @ts-ignore
+  // Utility
   const copyAddress = async (address: string) => {
     await navigator.clipboard.writeText(address)
     setCopied(true)
-     // @ts-ignore
     setTimeout(() => setCopied(false), 2000)
   }
   const truncateAddress = (addr: string) => {
@@ -71,7 +62,6 @@ export default function WillManager() {
     setLoading(true)
     setError(null)
     try {
-      // @ts-ignore
       const result = await surfClient().useABI(WILL_ABI).view.get_will({
         functionArguments: [ownerAddress as `0x${string}`],
         typeArguments: [],
@@ -84,13 +74,11 @@ export default function WillManager() {
       setLoading(false)
     }
   }
-  // @ts-ignore
   const fetchWillsForRecipient = async () => {
     if (!owner || !recipient) return setError("Owner and recipient required.")
     setLoading(true)
     setError(null)
     try {
-       // @ts-ignore
       const result = await surfClient().useABI(WILL_ABI).view.get_wills_for_recipient({
         functionArguments: [owner as `0x${string}`, recipient as `0x${string}`],
         typeArguments: [],
@@ -103,13 +91,11 @@ export default function WillManager() {
       setLoading(false)
     }
   }
-  // @ts-ignore
   const fetchClaimableWills = async () => {
     if (!owner || !recipient) return setError("Owner and recipient required.")
     setLoading(true)
     setError(null)
     try {
-      // @ts-ignore
       const result = await surfClient().useABI(WILL_ABI).view.get_claimable_wills_for_recipient({
         functionArguments: [owner as `0x${string}`, recipient as `0x${string}`],
         typeArguments: [],
@@ -122,13 +108,11 @@ export default function WillManager() {
       setLoading(false)
     }
   }
-  // @ts-ignore
   const fetchWillCount = async () => {
     if (!owner || !recipient) return setError("Owner and recipient required.")
     setLoading(true)
     setError(null)
     try {
-       // @ts-ignore
       const result = await surfClient().useABI(WILL_ABI).view.get_will_count_for_recipient({
         functionArguments: [owner as `0x${string}`, recipient as `0x${string}`],
         typeArguments: [],
@@ -149,7 +133,6 @@ export default function WillManager() {
     setError(null)
     setStatus(null)
     try {
-       // @ts-ignore
       await abiClient.initialize({ type_arguments: [], arguments: [] })
       setStatus("Will contract initialized!")
       fetchWill()
@@ -165,7 +148,6 @@ export default function WillManager() {
     setError(null)
     setStatus(null)
     try {
-       // @ts-ignore
       await abiClient.initialize_global_registry({ type_arguments: [], arguments: [] })
       setStatus("Global registry initialized!")
     } catch (e: any) {
@@ -177,20 +159,13 @@ export default function WillManager() {
   const handleCreateWill = async () => {
     if (!abiClient) return setError("Wallet client not ready")
     if (!recipient || !amount || !timeout) return setError("Recipient, amount, and timeout required.")
-    if (!MODULE_ADDRESS) return setError("Registry address not set.")
     setLoading(true)
     setError(null)
     setStatus(null)
     try {
-      // @ts-ignore
       await abiClient.create_will({
         type_arguments: [],
-        arguments: [
-          recipient as `0x${string}`,
-          BigInt(amount),
-          BigInt(timeout),
-          MODULE_ADDRESS as `0x${string}`,
-        ],
+        arguments: [recipient as `0x${string}`, BigInt(amount), ownerAddress as `0x${string}`],
       })
       setStatus("Will created!")
       fetchWill()
@@ -206,7 +181,6 @@ export default function WillManager() {
     setError(null)
     setStatus(null)
     try {
-       // @ts-ignore
       await abiClient.ping({ type_arguments: [], arguments: [] })
       setStatus("Pinged successfully!")
       fetchWill()
@@ -223,7 +197,6 @@ export default function WillManager() {
     setError(null)
     setStatus(null)
     try {
-       // @ts-ignore
       await abiClient.claim({ type_arguments: [], arguments: [owner as `0x${string}`, BigInt(amount)] })
       setStatus("Claimed successfully!")
       fetchWill()
@@ -240,7 +213,6 @@ export default function WillManager() {
     setError(null)
     setStatus(null)
     try {
-      // @ts-ignore
       await abiClient.claim_single({ type_arguments: [], arguments: [owner as `0x${string}`] })
       setStatus("Claimed single will successfully!")
       fetchWill()

@@ -50,6 +50,8 @@ export const FloatingNav = ({
   React.useEffect(() => {
     if (connected) {
       router.push("/dashboard");
+    } else {
+      router.push("/");
     }
   }, [connected, router]);
 

@@ -88,9 +88,9 @@ const FAQSection = () => {
                 )}
                 variants={itemVariants}
               >
-                
-                <span className="text-5xl text-white/80 leading-tight">Have questions in mind?</span>
-                
+                <span className="text-5xl text-white/80 leading-tight bg-gradient-to-r from-[#C0C0C0] to-white bg-clip-text text-transparent">
+                  Have questions in mind?
+                </span>
               </motion.h2>
               <motion.p className="text-2xl font-light text-white/70" variants={itemVariants}>
                 Let us answer it
@@ -103,7 +103,7 @@ const FAQSection = () => {
                 Contact us at{" "}
                 <a
                   href="mailto:contact@startup.com"
-                  className="text-[#df500f] hover:text-[#ff6b35] transition-colors duration-300 underline decoration-[#df500f]/50 hover:decoration-[#ff6b35] font-normal"
+                  className="text-white/80 hover:text-white transition-colors duration-300 underline decoration-white/30 hover:decoration-white/60 font-normal bg-gradient-to-r from-[#C0C0C0] to-white bg-clip-text text-transparent hover:text-white"
                 >
                   contact@startup.com
                 </a>
@@ -118,10 +118,10 @@ const FAQSection = () => {
                 <motion.div key={index} variants={itemVariants} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                   <AccordionItem
                     value={`item-${index}`}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white/10 hover:border-[#df500f]/30 hover:shadow-[0_0_30px_rgba(223,80,15,0.1)] group"
+                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white/10 hover:border-[#C0C0C0]/30 hover:shadow-[0_0_30px_rgba(192,192,192,0.2)] group"
                   >
-                    <AccordionTrigger className="px-8 py-6 text-left text-white hover:text-white/90 transition-colors duration-300 hover:no-underline [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg]:text-[#df500f] [&[data-state=open]>svg]:scale-110">
-                      <span className="text-lg font-thin pr-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#df500f] transition-all duration-300">
+                    <AccordionTrigger className="px-8 py-6 text-left text-white hover:text-white/90 transition-colors duration-300 hover:no-underline [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg]:text-[#C0C0C0] [&[data-state=open]>svg]:scale-110">
+                      <span className="text-lg font-thin pr-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#C0C0C0] transition-all duration-300">
                         {faq.question}
                       </span>
                     </AccordionTrigger>
