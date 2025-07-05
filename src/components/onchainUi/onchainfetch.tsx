@@ -25,7 +25,7 @@ export default function WillManager() {
   const [recipient, setRecipient] = useState("")
   const [owner, setOwner] = useState("")
   const [amount, setAmount] = useState("")
-  const [timeout, setTimeout] = useState("")
+  const [timeout, setTimeout] = useState("120")
   const [status, setStatus] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
@@ -312,7 +312,10 @@ export default function WillManager() {
                   <div className="flex items-center gap-2 mb-2"><Gift className="w-4 h-4 text-[#df500f]" /><span className="text-white font-medium">Create Will</span></div>
                   <input type="text" placeholder="Recipient address" value={recipient} onChange={e => setRecipient(e.target.value)} className="w-full p-2 rounded bg-white/10 text-white mb-2" />
                   <input type="number" placeholder="Amount (u64)" value={amount} onChange={e => setAmount(e.target.value)} className="w-full p-2 rounded bg-white/10 text-white mb-2" />
-                  <input type="number" placeholder="Timeout (secs)" value={timeout} onChange={e => setTimeout(e.target.value)} className="w-full p-2 rounded bg-white/10 text-white mb-2" />
+                  <div className="w-full p-2 rounded bg-white/10 text-white mb-2 flex items-center justify-between">
+                    <span>Timeout (secs)</span>
+                    <span className="font-mono">120</span>
+                  </div>
                   <motion.button onClick={handleCreateWill} disabled={loading} className="w-full py-2 bg-gradient-to-r from-[#df500f] to-[#ff6b35] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(223,80,15,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>{loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Gift className="w-4 h-4" />}Create Will</motion.button>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">

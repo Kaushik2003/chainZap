@@ -1,5 +1,5 @@
 export const WILL_ABI = {
-  "address": "0x99db5a47d1ad6cdf0a9a24a58d7cfe0bc8ebaf7c059d849e6727c490846aa440",
+  "address": "0x9339f4839927957aaf6f8a6e0c1731b837d41b565ce53efe531bffc3e429a75e",
   "name": "will",
   "friends": [],
   "exposed_functions": [
@@ -64,7 +64,7 @@ export const WILL_ABI = {
         "address"
       ],
       "return": [
-        "vector\u003C0x99db5a47d1ad6cdf0a9a24a58d7cfe0bc8ebaf7c059d849e6727c490846aa440::will::Will\u003E"
+        "vector\u003C0x9339f4839927957aaf6f8a6e0c1731b837d41b565ce53efe531bffc3e429a75e::will::Will\u003E"
       ]
     },
     {
@@ -77,7 +77,7 @@ export const WILL_ABI = {
         "address"
       ],
       "return": [
-        "0x1::option::Option\u003C0x99db5a47d1ad6cdf0a9a24a58d7cfe0bc8ebaf7c059d849e6727c490846aa440::will::Will\u003E"
+        "0x1::option::Option\u003C0x9339f4839927957aaf6f8a6e0c1731b837d41b565ce53efe531bffc3e429a75e::will::Will\u003E"
       ]
     },
     {
@@ -105,7 +105,7 @@ export const WILL_ABI = {
         "address"
       ],
       "return": [
-        "vector\u003C0x99db5a47d1ad6cdf0a9a24a58d7cfe0bc8ebaf7c059d849e6727c490846aa440::will::Will\u003E"
+        "vector\u003C0x9339f4839927957aaf6f8a6e0c1731b837d41b565ce53efe531bffc3e429a75e::will::Will\u003E"
       ]
     },
     {
@@ -191,7 +191,7 @@ export const WILL_ABI = {
       "fields": [
         {
           "name": "wills",
-          "type": "0x1::table::Table\u003Caddress, 0x99db5a47d1ad6cdf0a9a24a58d7cfe0bc8ebaf7c059d849e6727c490846aa440::will::Will\u003E"
+          "type": "0x1::table::Table\u003Caddress, 0x9339f4839927957aaf6f8a6e0c1731b837d41b565ce53efe531bffc3e429a75e::will::Will\u003E"
         },
         {
           "name": "balances",
