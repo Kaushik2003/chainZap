@@ -1,10 +1,10 @@
 [package]
-name = "MessageBoard"
+name = "will_contract"
 version = "1.0.0"
 authors = []
 
 [addresses]
-message_board_addr = "_"
+will_contract_addr = "0xfd4f4ed6f7082c220b2e399e481c7d58817fd8321410a1ea86da879399672a23"
 
 [dependencies]
 AptosFramework = { git = "https://github.com/aptos-labs/aptos-framework.git", rev = "mainnet", subdir = "aptos-framework" }
