@@ -24,6 +24,8 @@ Because your digital assets matter. You've worked hard to accumulate them, and y
 ---
 
 ## How does it work?
+![WhatsApp Image 2025-07-05 at 12 58 36_19d443fb](https://github.com/user-attachments/assets/f05ada85-7e8d-4823-beaf-1640ab45f52f)
+
 
 1. **Set Up & Fund Your Will**: Specify a recipient and amount. Funds are locked in the contract, secured by Aptos.
 2. **Stay Active with Pings**: Regularly ping the contract to show you're still around. If you don't, your will becomes claimable.
@@ -305,7 +307,8 @@ This project is licensed under the [Apache-2.0 License](LICENSE).
 
 > **This is our vision for the next generation of ChainZap.**
 
-![TLD Protocol Architecture](docs/tld-architecture.png)
+![image](https://github.com/user-attachments/assets/c738eb7f-683a-411e-967f-b3d5792dde98)
+
 
 ### Planned Features
 
