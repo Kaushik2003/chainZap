@@ -120,7 +120,7 @@ export const Logo = () => {
   return (
     <a
       href="#"
-      className="relative z-20 flex items-center space-x-3 py-4 px-4 mb-6 rounded-2xl bg-gradient-to-r from-[#df500f] to-[#ff6b35] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/10"
+      className="relative z-20 flex items-center space-x-3 py-4 px-4 mb-6 rounded-2xl bg-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/10"
     >
       <img src="https://i.pinimg.com/736x/67/cf/55/67cf55dd9e967d9e3ecc483691328fcb.jpg" alt="ChainZap" className="h-7 w-8 shrink-0 rounded-xl bg-white/20 backdrop-blur-sm border border-white/10" />
       

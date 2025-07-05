@@ -225,7 +225,7 @@ export default function WillManager() {
 
   // UI
   return (
-    <div className={cn("min-h-screen bg-black p-8 relative", poppins.className)} style={{ backgroundImage: "url('/images/gradient.png')", backgroundPosition: "top center", backgroundRepeat: "no-repeat", backgroundSize: "100% auto" }}>
+    <div className={cn("min-h-screen bg-black p-8 relative", poppins.className)} >
       <div className="absolute left-0 right-0" style={{ top: "30%", bottom: 0, pointerEvents: "none", background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.85) 80%, #000 100%)" }}></div>
       <div className="max-w-3xl mx-auto relative z-10">
         <motion.div className="text-center mb-12" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
