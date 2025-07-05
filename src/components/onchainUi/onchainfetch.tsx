@@ -49,11 +49,11 @@ export default function WillManager() {
   const [loading, setLoading] = useState(false)
   const [copied, setCopied] = useState(false)
   const [will, setWill] = useState<any>(null)
-   // @ts-ignore
+  // @ts-ignore
   const [willsForRecipient, setWillsForRecipient] = useState<any[]>([])
-   // @ts-ignore
+  // @ts-ignore
   const [claimableWills, setClaimableWills] = useState<any[]>([])
-   // @ts-ignore
+  // @ts-ignore
   const [willCount, setWillCount] = useState<number | null>(null)
 
   // Step completion states
@@ -83,7 +83,7 @@ export default function WillManager() {
     const date = new Date(Number(timestamp) * 1000)
     return date.toLocaleString()
   }
- // @ts-ignore
+  // @ts-ignore
   const isValidAddress = (addr: string) => {
     return addr.startsWith("0x") && addr.length >= 10
   }
@@ -125,7 +125,7 @@ export default function WillManager() {
       setLoading(false)
     }
   }
- // @ts-ignore
+  // @ts-ignore
   const fetchClaimableWills = async () => {
     if (!owner || !recipient || !abiClient) return setError("Owner and recipient required.")
     setLoading(true)
@@ -143,7 +143,7 @@ export default function WillManager() {
       setLoading(false)
     }
   }
- // @ts-ignore
+  // @ts-ignore
   const fetchWillCount = async () => {
     if (!owner || !recipient || !abiClient) return setError("Owner and recipient required.")
     setLoading(true)
@@ -293,7 +293,7 @@ export default function WillManager() {
           transition={{ duration: 0.8 }}
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#df500f] to-[#ff6b35] rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#bb1b0b] to-[#bb1b0b] rounded-2xl flex items-center justify-center shadow-lg">
               <FileText className="w-6 h-6 text-white" />
             </div>
             <h1 className="text-4xl font-thin text-white">On-chain Will Manager</h1>
@@ -302,20 +302,20 @@ export default function WillManager() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-8 justify-center">
+        {/* <div className="flex gap-2 mb-8 justify-center">
           <button
-            className={`px-6 py-3 rounded-lg transition-all duration-300 ${tab === "yourWill" ? "bg-[#df500f] text-white" : "bg-white/10 text-white/60 hover:bg-white/20"}`}
+            className={`px-6 py-3 rounded-lg transition-all duration-300 ${tab === "yourWill" ? "bg-[#bb1b0b] text-white" : "bg-white/10 text-white/60 hover:bg-white/20"}`}
             onClick={() => setTab("yourWill")}
           >
             Create Will
           </button>
           <button
-            className={`px-6 py-3 rounded-lg transition-all duration-300 ${tab === "manage" ? "bg-[#df500f] text-white" : "bg-white/10 text-white/60 hover:bg-white/20"}`}
+            className={`px-6 py-3 rounded-lg transition-all duration-300 ${tab === "manage" ? "bg-[#bb1b0b] text-white" : "bg-white/10 text-white/60 hover:bg-white/20"}`}
             onClick={() => setTab("manage")}
           >
             Manage & Claim
           </button>
-        </div>
+        </div> */}
 
         {tab === "yourWill" && (
           <>
@@ -329,13 +329,12 @@ export default function WillManager() {
               <div className="flex items-center gap-4">
                 {/* Step 1 */}
                 <div
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-                    willInitialized
-                      ? "bg-green-500/20 border border-green-500/30"
-                      : connected
-                        ? "bg-[#df500f]/20 border border-[#df500f]/30"
-                        : "bg-white/5 border border-white/10"
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${willInitialized
+                    ? "bg-green-500/20 border border-green-500/30"
+                    : connected
+                      ? "bg-[#bb1b0b]/20 border border-[#bb1b0b]/30"
+                      : "bg-white/5 border border-white/10"
+                    }`}
                 >
                   {willInitialized ? (
                     <CheckCircle className="w-4 h-4 text-green-400" />
@@ -348,13 +347,12 @@ export default function WillManager() {
 
                 {/* Step 2 */}
                 <div
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-                    globalRegistryInitialized
-                      ? "bg-green-500/20 border border-green-500/30"
-                      : willInitialized
-                        ? "bg-[#df500f]/20 border border-[#df500f]/30"
-                        : "bg-white/5 border border-white/10"
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${globalRegistryInitialized
+                    ? "bg-green-500/20 border border-green-500/30"
+                    : willInitialized
+                      ? "bg-[#bb1b0b]/20 border border-[#bb1b0b]/30"
+                      : "bg-white/5 border border-white/10"
+                    }`}
                 >
                   {globalRegistryInitialized ? (
                     <CheckCircle className="w-4 h-4 text-green-400" />
@@ -367,13 +365,12 @@ export default function WillManager() {
 
                 {/* Step 3 */}
                 <div
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-                    recipientSet
-                      ? "bg-green-500/20 border border-green-500/30"
-                      : globalRegistryInitialized
-                        ? "bg-[#df500f]/20 border border-[#df500f]/30"
-                        : "bg-white/5 border border-white/10"
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${recipientSet
+                    ? "bg-green-500/20 border border-green-500/30"
+                    : globalRegistryInitialized
+                      ? "bg-[#bb1b0b]/20 border border-[#bb1b0b]/30"
+                      : "bg-white/5 border border-white/10"
+                    }`}
                 >
                   {recipientSet ? (
                     <CheckCircle className="w-4 h-4 text-green-400" />
@@ -386,13 +383,12 @@ export default function WillManager() {
 
                 {/* Step 4 */}
                 <div
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
-                    willCreated
-                      ? "bg-green-500/20 border border-green-500/30"
-                      : recipientSet
-                        ? "bg-[#df500f]/20 border border-[#df500f]/30"
-                        : "bg-white/5 border border-white/10"
-                  }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${willCreated
+                    ? "bg-green-500/20 border border-green-500/30"
+                    : recipientSet
+                      ? "bg-[#bb1b0b]/20 border border-[#bb1b0b]/30"
+                      : "bg-white/5 border border-white/10"
+                    }`}
                 >
                   {willCreated ? (
                     <CheckCircle className="w-4 h-4 text-green-400" />
@@ -413,10 +409,10 @@ export default function WillManager() {
             >
               {/* Wallet Connection Section */}
               {!connected && (
-                <div className="p-8 border-b border-white/10 bg-gradient-to-r from-[#df500f]/10 to-[#ff6b35]/10">
+                <div className="p-8 border-b border-white/10 bg-gradient-to-r from-[#bb1b0b]/10 to-[#bb1b0b]/10">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#df500f]/20 to-[#ff6b35]/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
-                      <Wallet className="w-8 h-8 text-[#df500f]" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#bb1b0b]/20 to-[#bb1b0b]/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
+                      <Wallet className="w-8 h-8 text-[#bb1b0b]" />
                     </div>
                     <h3 className="text-white text-xl font-thin mb-3">Connect Your Wallet</h3>
                     <p className="text-white/60 text-sm mb-6 leading-relaxed max-w-md mx-auto">
@@ -431,11 +427,11 @@ export default function WillManager() {
                 <div className="p-8">
                   {/* Owner Address Display */}
                   <div className="mb-8">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#df500f] to-[#ff6b35] rounded-xl flex items-center justify-center mx-auto mb-6 border border-white/10">
-                        <Wallet className="w-5 h-5 text-[#df500f]" />
+                    <div className="flex flex-col items-center justify-center gap-3 mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#bb1b0b] to-[#bb1b0b] rounded-xl flex items-center justify-center border border-white/10 mb-2">
+                        <Wallet className="w-6 h-6 text-[white]" />
                       </div>
-                      <div>
+                      <div className="text-center">
                         <h3 className="text-white text-lg font-medium">Will Owner (Your Wallet)</h3>
                         <p className="text-white/60 text-sm">This will be created for your connected wallet</p>
                       </div>
@@ -466,14 +462,13 @@ export default function WillManager() {
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                          willInitialized ? "bg-green-500/20" : "bg-[#df500f]/20"
-                        }`}
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${willInitialized ? "bg-green-500/20" : "bg-[#bb1b0b]/20"
+                          }`}
                       >
                         {willInitialized ? (
                           <CheckCircle className="w-5 h-5 text-green-400" />
                         ) : (
-                          <Shield className="w-5 h-5 text-[#df500f]" />
+                          <Shield className="w-5 h-5 text-[#bb1b0b]" />
                         )}
                       </div>
                       <div>
@@ -484,7 +479,7 @@ export default function WillManager() {
                     <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
                       {!willInitialized && (
                         <motion.button
-                          className="w-full py-4 bg-gradient-to-r from-[#df500f] to-[#ff6b35] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(223,80,15,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                          className="w-full py-4 bg-gradient-to-r from-[#bb1b0b] to-[#bb1b0b] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(187,27,11,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                           onClick={handleInitialize}
                           disabled={loading}
                           whileHover={{ scale: 1.02 }}
@@ -507,18 +502,17 @@ export default function WillManager() {
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                          globalRegistryInitialized
-                            ? "bg-green-500/20"
-                            : willInitialized
-                              ? "bg-[#df500f]/20"
-                              : "bg-white/10"
-                        }`}
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${globalRegistryInitialized
+                          ? "bg-green-500/20"
+                          : willInitialized
+                            ? "bg-[#bb1b0b]/20"
+                            : "bg-white/10"
+                          }`}
                       >
                         {globalRegistryInitialized ? (
                           <CheckCircle className="w-5 h-5 text-green-400" />
                         ) : willInitialized ? (
-                          <Globe2 className="w-5 h-5 text-[#df500f]" />
+                          <Globe2 className="w-5 h-5 text-[#bb1b0b]" />
                         ) : (
                           <Lock className="w-5 h-5 text-white/40" />
                         )}
@@ -535,13 +529,12 @@ export default function WillManager() {
                       </div>
                     </div>
                     <div
-                      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 ${
-                        !willInitialized ? "opacity-50" : ""
-                      }`}
+                      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 ${!willInitialized ? "opacity-50" : ""
+                        }`}
                     >
                       {willInitialized && !globalRegistryInitialized && (
                         <motion.button
-                          className="w-full py-4 bg-gradient-to-r from-[#df500f] to-[#ff6b35] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(223,80,15,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                          className="w-full py-4 bg-gradient-to-r from-[#bb1b0b] to-[#bb1b0b] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(187,27,11,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                           onClick={handleInitializeGlobalRegistry}
                           disabled={loading}
                           whileHover={{ scale: 1.02 }}
@@ -570,18 +563,17 @@ export default function WillManager() {
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                          recipientSet
-                            ? "bg-green-500/20"
-                            : globalRegistryInitialized
-                              ? "bg-[#df500f]/20"
-                              : "bg-white/10"
-                        }`}
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${recipientSet
+                          ? "bg-green-500/20"
+                          : globalRegistryInitialized
+                            ? "bg-[#bb1b0b]/20"
+                            : "bg-white/10"
+                          }`}
                       >
                         {recipientSet ? (
                           <CheckCircle className="w-5 h-5 text-green-400" />
                         ) : globalRegistryInitialized ? (
-                          <User className="w-5 h-5 text-[#df500f]" />
+                          <User className="w-5 h-5 text-[#bb1b0b]" />
                         ) : (
                           <Lock className="w-5 h-5 text-white/40" />
                         )}
@@ -598,15 +590,14 @@ export default function WillManager() {
                       </div>
                     </div>
                     <div
-                      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 ${
-                        !globalRegistryInitialized ? "opacity-50" : ""
-                      }`}
+                      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 ${!globalRegistryInitialized ? "opacity-50" : ""
+                        }`}
                     >
                       <div className="space-y-4">
                         <div>
                           <label className="block text-white/70 text-sm font-light mb-2">Recipient Address</label>
                           <input
-                            className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:border-[#df500f]/50 focus:ring-2 focus:ring-[#df500f]/20 transition-all duration-300 disabled:opacity-50"
+                            className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:border-[#bb1b0b]/50 focus:ring-2 focus:ring-[#bb1b0b]/20 transition-all duration-300 disabled:opacity-50"
                             placeholder="Enter recipient address (0x...)"
                             value={recipient}
                             onChange={(e) => {
@@ -623,7 +614,7 @@ export default function WillManager() {
                         <div>
                           <label className="block text-white/70 text-sm font-light mb-2">Amount (APT)</label>
                           <input
-                            className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:border-[#df500f]/50 focus:ring-2 focus:ring-[#df500f]/20 transition-all duration-300 disabled:opacity-50"
+                            className="w-full p-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:border-[#bb1b0b]/50 focus:ring-2 focus:ring-[#bb1b0b]/20 transition-all duration-300 disabled:opacity-50"
                             placeholder="Enter amount in APT (1 APT = 100000000 units)"
                             value={amount}
                             onChange={(e) => {
@@ -661,14 +652,13 @@ export default function WillManager() {
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                       <div
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                          willCreated ? "bg-green-500/20" : recipientSet ? "bg-[#df500f]/20" : "bg-white/10"
-                        }`}
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${willCreated ? "bg-green-500/20" : recipientSet ? "bg-[#bb1b0b]/20" : "bg-white/10"
+                          }`}
                       >
                         {willCreated ? (
                           <CheckCircle className="w-5 h-5 text-green-400" />
                         ) : recipientSet ? (
-                          <Gift className="w-5 h-5 text-[#df500f]" />
+                          <Gift className="w-5 h-5 text-[#bb1b0b]" />
                         ) : (
                           <Lock className="w-5 h-5 text-white/40" />
                         )}
@@ -685,13 +675,12 @@ export default function WillManager() {
                       </div>
                     </div>
                     <div
-                      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 ${
-                        !recipientSet ? "opacity-50" : ""
-                      }`}
+                      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-all duration-300 ${!recipientSet ? "opacity-50" : ""
+                        }`}
                     >
                       {recipientSet && !willCreated && (
                         <motion.button
-                          className="w-full py-4 bg-gradient-to-r from-[#df500f] to-[#ff6b35] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(223,80,15,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                          className="w-full py-4 bg-gradient-to-r from-[#bb1b0b] to-[#bb1b0b] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(187,27,11,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                           onClick={handleCreateWill}
                           disabled={loading || !recipient || !amount}
                           whileHover={{ scale: 1.02 }}
@@ -729,16 +718,16 @@ export default function WillManager() {
                       whileTap={{ scale: 0.98 }}
                     >
                       {loading ? (
-                        <Loader2 className="w-5 h-5 text-[#df500f] animate-spin" />
+                        <Loader2 className="w-5 h-5 text-[#bb1b0b] animate-spin" />
                       ) : (
-                        <RefreshCw className="w-5 h-5 text-[#df500f]" />
+                        <RefreshCw className="w-5 h-5 text-[#bb1b0b]" />
                       )}
                       <span className="text-white font-medium">Refresh Will Data</span>
                     </motion.button>
 
                     <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <FileText className="w-5 h-5 text-[#df500f]" />
+                        <FileText className="w-5 h-5 text-[#bb1b0b]" />
                         <h4 className="text-white font-medium">Your Will:</h4>
                       </div>
                       {will && will.length > 0 ? (
@@ -805,7 +794,7 @@ export default function WillManager() {
                   {/* Security Notice */}
                   <div className="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
                     <div className="flex items-center gap-3 mb-3">
-                      <Shield className="w-5 h-5 text-[#df500f]" />
+                      <Shield className="w-5 h-5 text-[#bb1b0b]" />
                       <h4 className="text-white font-medium">Security Notice</h4>
                     </div>
                     <p className="text-white/60 text-sm leading-relaxed">
@@ -828,8 +817,8 @@ export default function WillManager() {
           >
             {!connected ? (
               <div className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#df500f]/20 to-[#ff6b35]/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
-                  <Wallet className="w-8 h-8 text-[#df500f]" />
+                <div className="w-16 h-16 bg-gradient-to-br from-[#bb1b0b]/20 to-[#bb1b0b]/20 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
+                  <Wallet className="w-8 h-8 text-[#bb1b0b]" />
                 </div>
                 <p className="text-white/60 text-lg mb-6">Please connect your wallet.</p>
                 <WalletSelector />
@@ -840,13 +829,13 @@ export default function WillManager() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <Activity className="w-4 h-4 text-[#df500f]" />
+                      <Activity className="w-4 h-4 text-[#bb1b0b]" />
                       <span className="text-white font-medium">Ping Will</span>
                     </div>
                     <motion.button
                       onClick={handlePing}
                       disabled={loading}
-                      className="w-full py-2 bg-gradient-to-r from-[#df500f] to-[#ff6b35] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(223,80,15,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                      className="w-full py-2 bg-gradient-to-r from-[#bb1b0b] to-[#bb1b0b] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(187,27,11,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -857,7 +846,7 @@ export default function WillManager() {
 
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <Gift className="w-4 h-4 text-[#df500f]" />
+                      <Gift className="w-4 h-4 text-[#bb1b0b]" />
                       <span className="text-white font-medium">Claim Will</span>
                     </div>
                     <input
@@ -888,7 +877,7 @@ export default function WillManager() {
 
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <Gift className="w-4 h-4 text-[#df500f]" />
+                      <Gift className="w-4 h-4 text-[#bb1b0b]" />
                       <span className="text-white font-medium">Claim Single</span>
                     </div>
                     <input

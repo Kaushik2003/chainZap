@@ -78,11 +78,11 @@ export default function DashboardWalletCard({ aptosData }: { aptosData: any }) {
         //   transition: { duration: 0.6, ease: "easeOut" },
         // }}
         style={{
-          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 40%, #2a2a2a 70%, #f5f5f7 100%)",
+          background: "linear-gradient(135deg, #bb1b0b 0%, #c43a24 40%, #d45a3d 70%, #f5f5f7 100%)",
         }}
       >
         {/* Matte texture overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/3 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#bb1b0b]/10 via-transparent to-[#bb1b0b]/30" />
 
         {/* Subtle noise texture for satin finish */}
         <div
@@ -94,10 +94,10 @@ export default function DashboardWalletCard({ aptosData }: { aptosData: any }) {
 
         {/* Soft spotlight effect */}
         <motion.div
-          className="absolute inset-0 bg-gradient-radial from-white/15 via-white/5 to-transparent opacity-0"
+          className="absolute inset-0 bg-gradient-radial from-[#bb1b0b]/15 via-[#bb1b0b]/5 to-transparent opacity-0"
           style={{
             background:
-              "radial-gradient(circle 200px at var(--x, 50%) var(--y, 50%), rgba(245,245,247,0.15) 0%, rgba(245,245,247,0.05) 40%, transparent 70%)",
+              "radial-gradient(circle 200px at var(--x, 50%) var(--y, 50%), rgba(187,27,11,0.15) 0%, rgba(187,27,11,0.05) 40%, transparent 70%)",
           }}
           whileHover={{
             opacity: 1,
@@ -118,14 +118,14 @@ export default function DashboardWalletCard({ aptosData }: { aptosData: any }) {
           <div className="flex justify-between items-start">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-[#bb1b0b]/40 backdrop-blur-sm flex items-center justify-center">
                 <Wallet className="w-5 h-5 text-white" />
               </div>
               <span className="text-sm font-semibold tracking-wider uppercase">APTOS WALLET</span>
             </div>
 
             {/* NFC/Chip symbol */}
-            <div className="w-10 h-8 rounded border border-white/30 flex items-center justify-center">
+            <div className="w-10 h-8 rounded border border-[#bb1b0b]/50 flex items-center justify-center">
               <Wifi className="w-4 h-4 text-white/70" />
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function DashboardWalletCard({ aptosData }: { aptosData: any }) {
 
         {/* Hover shadow */}
         <motion.div
-          className="absolute -inset-4 bg-gradient-to-br from-gray-300/10 to-black/30 rounded-3xl -z-10 blur-xl"
+          className="absolute -inset-4 bg-gradient-to-br from-[#bb1b0b]/30 to-black/30 rounded-3xl -z-10 blur-xl"
           initial={{ opacity: 0 }}
           whileHover={{
             opacity: 1,

@@ -79,7 +79,7 @@ export function PingWill() {
     return (
       <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3 text-center">
         <div className="flex items-center gap-2 mb-2 justify-center">
-          <Activity className="w-4 h-4 text-[#df500f]" />
+          <Activity className="w-4 h-4 text-[#bb1b0b]" />
           <span className="text-white font-medium">Ping Will</span>
         </div>
         <p className="text-white/60 text-sm mb-4">Connect your wallet to ping your will.</p>
@@ -90,7 +90,7 @@ export function PingWill() {
   return (
     <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
       <div className="flex items-center gap-2 mb-2">
-        <Activity className="w-4 h-4 text-[#df500f]" />
+        <Activity className="w-4 h-4 text-[#bb1b0b]" />
         <span className="text-white font-medium">Ping Will</span>
       </div>
       <p className="text-white/60 text-sm mb-4">
@@ -99,7 +99,7 @@ export function PingWill() {
       <motion.button
         onClick={handlePing}
         disabled={loading}
-        className="w-full py-3 bg-gradient-to-r from-[#df500f] to-[#ff6b35] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(223,80,15,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full py-3 bg-gradient-to-r from-[#bb1b0b] to-[#bb1b0b] text-white rounded-xl font-medium hover:shadow-[0_0_30px_rgba(187,27,11,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
@@ -121,7 +121,7 @@ export function PingWill() {
       <div className="mt-6">
         <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
           <div className="flex items-center gap-3 mb-4">
-            <FileText className="w-5 h-5 text-[#df500f]" />
+            <FileText className="w-5 h-5 text-[#bb1b0b]" />
             <h4 className="text-white font-medium">Your Will:</h4>
           </div>
           {will && will.length > 0 ? (
