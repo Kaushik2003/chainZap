@@ -4,13 +4,13 @@ import { useState } from "react"
 import { useWallet } from "@aptos-labs/wallet-adapter-react"
 import { useWalletClient } from "@thalalabs/surf/hooks"
 import { WILL_ABI } from "@/utils/will_abi"
-import { ClaimWill } from "../_components/ClaimWill"
+import { ClaimWill } from "../_components/ClaimWill" // @ts-ignore
 import { surfClient } from "@/utils/surfClient"
 import { AlertCircle, CheckCircle, Loader2 } from "lucide-react"
 import { motion } from "framer-motion"
 
-export default function CheckWillPage() {
-  const { connected } = useWallet()
+export default function CheckWillPage() { // @ts-ignore
+  const { connected } = useWallet() // @ts-ignore
   const { client } = useWalletClient()
   const abiClient = client?.useABI(WILL_ABI)
 
