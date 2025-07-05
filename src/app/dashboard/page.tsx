@@ -24,6 +24,7 @@ import DashboardAssetDistribution from "./_components/DashboardAssetDistribution
 import DashboardPriceChart from "./_components/DashboardPriceChart"
 import DashboardCreateWill from "./createwill/CreateWillPage"
 import CheckWillPage from "./checkwill/CheckWillPage"
+import PingWillPage from "./pingwill/Page"
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -258,6 +259,9 @@ export default function DashboardPage() {
           )}
           {activeSection === "settings" && (
             <CheckWillPage />
+          )}
+          {activeSection === "pingwill" && (
+            <PingWillPage />
           )}
         </SidebarDemo>
       </div>

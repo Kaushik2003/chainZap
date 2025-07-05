@@ -200,4 +200,4 @@ export const WILL_ABI = {
       ]
     }
   ]
-}
+} as const

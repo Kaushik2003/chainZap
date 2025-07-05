@@ -6,7 +6,7 @@ import { IconArrowLeft, IconBrandTabler } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { WalletSelector } from "@/components/WalletSelector";
-import { FileText, Shield } from "lucide-react";
+import { FileText, Shield, Activity } from "lucide-react";
 
 export function SidebarDemo({ children, onSectionChange }: { children: React.ReactNode, onSectionChange?: (section: string) => void }) {
   const links = [
@@ -16,14 +16,19 @@ export function SidebarDemo({ children, onSectionChange }: { children: React.Rea
       section: "dashboard",
     },
     {
-      label: "create will",
+      label: "Create will",
       section: "profile",
       icon: <FileText className="h-5 w-5 shrink-0 text-white/70" />,
     },
     {
-      label: "check will",
+      label: "Claim will",
       section: "settings",
       icon: <Shield className="h-5 w-5 shrink-0 text-white/70" />,
+    },
+    {
+      label: "Ping Will",
+      section: "pingwill",
+      icon: <Activity className="h-5 w-5 shrink-0 text-white/70" />,
     },
     {
       label: "Logout",
