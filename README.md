@@ -10,6 +10,11 @@ In the world of crypto, losing access to your wallet often means your assets are
 
 ---
 
+## contract address
+https://explorer.aptoslabs.com/txn/0x9d404816a2803cbc5c86c729412d9de05629f8a7e21835c9cc235fc7a60ecd0d?network=testnet
+
+---
+
 ## Why do you need ChainZap?
 
 Because your digital assets matter. You've worked hard to accumulate them, and you deserve the peace of mind that comes from knowing your legacy is protected. ChainZap lets you:
