@@ -252,54 +252,6 @@ App runs at [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## Troubleshooting & FAQ
-
-**Wallet not connecting?**
-
-- Ensure you have an Aptos-compatible wallet installed (e.g., Petra, Martian).
-- Refresh the page and reconnect.
-
-**Contract errors (e.g., registry not initialized)?**
-
-- Make sure to initialize the contract and global registry before creating wills.
-
-**Claim fails with 'too soon'?**
-
-- The owner must be inactive (not pinged) for the full timeout period before a claim is allowed.
-
-**How do I update my will?**
-
-- You can create a new will to overwrite the previous one.
-
-**Where are my assets stored?**
-
-- Assets are locked in the Move contract on Aptos until claimed.
-
----
-
-## Contributing
-
-We welcome contributions! To contribute:
-
-- Fork the repo and create a feature branch.
-- Follow the existing code style (TypeScript, Prettier, ESLint).
-- Write clear commit messages and document your changes.
-- Open a pull request with a detailed description.
-- For major changes, open an issue first to discuss your proposal.
-
----
-
-## Credits & Acknowledgments
-
-- Built with [Next.js](https://nextjs.org/), [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/), [Aptos](https://aptos.dev/), and [Move](https://move-language.github.io/move/).
-- Wallet integration via [@aptos-labs/wallet-adapter-react](https://github.com/aptos-labs/aptos-wallet-adapter).
-- Special thanks to the Aptos and Move developer communities.
-
----
-
-## License
-
-This project is licensed under the [Apache-2.0 License](LICENSE).
 
 ---
 
@@ -329,3 +281,27 @@ This project is licensed under the [Apache-2.0 License](LICENSE).
 ---
 
 **Ready to plan your legacy? Try ChainZap today, and stay tuned for the next evolution of trustless digital inheritance!**
+---
+## Troubleshooting & FAQ
+
+
+**Wallet not connecting?**
+
+- Ensure you have an Aptos-compatible wallet installed (e.g., Petra, Martian).
+- Refresh the page and reconnect.
+
+**Contract errors (e.g., registry not initialized)?**
+
+- Make sure to initialize the contract and global registry before creating wills.
+
+**Claim fails with 'too soon'?**
+
+- The owner must be inactive (not pinged) for the full timeout period before a claim is allowed.
+
+**How do I update my will?**
+
+- You can create a new will to overwrite the previous one.
+
+**Where are my assets stored?**
+
+- Assets are locked in the Move contract on Aptos until claimed.
