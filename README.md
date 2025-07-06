@@ -11,6 +11,7 @@ In the world of crypto, losing access to your wallet often means your assets are
 ---
 
 ## contract address
+
 https://explorer.aptoslabs.com/txn/0x9d404816a2803cbc5c86c729412d9de05629f8a7e21835c9cc235fc7a60ecd0d?network=testnet
 
 ---
@@ -29,8 +30,8 @@ Because your digital assets matter. You've worked hard to accumulate them, and y
 ---
 
 ## How does it work?
-![WhatsApp Image 2025-07-05 at 12 58 36_19d443fb](https://github.com/user-attachments/assets/f05ada85-7e8d-4823-beaf-1640ab45f52f)
 
+![ChainZap Architecture](public/images/architecture-diagram.jpg)
 
 1. **Set Up & Fund Your Will**: Specify a recipient and amount. Funds are locked in the contract, secured by Aptos.
 2. **Stay Active with Pings**: Regularly ping the contract to show you're still around. If you don't, your will becomes claimable.
@@ -57,6 +58,7 @@ Aptos is one of the fastest, most secure, and most scalable blockchains availabl
 ## Table of Contents
 
 - [ChainZap: Plan Your Legacy On-Chain](#chainzap-plan-your-legacy-on-chain)
+  - [contract address](#contract-address)
   - [Why do you need ChainZap?](#why-do-you-need-chainzap)
   - [How does it work?](#how-does-it-work)
   - [Why did we build ChainZap on Aptos?](#why-did-we-build-chainzap-on-aptos)
@@ -64,6 +66,7 @@ Aptos is one of the fastest, most secure, and most scalable blockchains availabl
   - [Table of Contents](#table-of-contents)
   - [Current Architecture \& Features](#current-architecture--features)
     - [Architecture Overview](#architecture-overview)
+    - [Tech Stack](#tech-stack)
     - [Features](#features)
   - [User Flows](#user-flows)
     - [1. Will Creation](#1-will-creation)
@@ -79,12 +82,11 @@ Aptos is one of the fastest, most secure, and most scalable blockchains availabl
     - [Running the App](#running-the-app)
     - [Deploying the Move Contract](#deploying-the-move-contract)
   - [Usage](#usage)
-  - [Troubleshooting \& FAQ](#troubleshooting--faq)
-  - [Contributing](#contributing)
-  - [Credits \& Acknowledgments](#credits--acknowledgments)
-  - [License](#license)
   - [Future Protocol: TLD (Trustless Legacy Distribution)](#future-protocol-tld-trustless-legacy-distribution)
     - [Planned Features](#planned-features)
+  - [Developer Contact Info](#developer-contact-info)
+  - [**Ready to plan your legacy? Try ChainZap today, and stay tuned for the next evolution of trustless digital inheritance!**](#ready-to-plan-your-legacy-try-chainzap-today-and-stay-tuned-for-the-next-evolution-of-trustless-digital-inheritance)
+  - [Troubleshooting \& FAQ](#troubleshooting--faq)
 
 ---
 
@@ -92,9 +94,18 @@ Aptos is one of the fastest, most secure, and most scalable blockchains availabl
 
 ### Architecture Overview
 
-- **Frontend:** Next.js/React app with wallet integration
+- **Frontend:** Next.js app with wallet integration
 - **Smart Contract:** Move contract on Aptos
 - **Key Flows:** Will creation, ping, claim
+
+### Tech Stack
+
+- Next.js (React)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Move (Aptos blockchain)
+- Node.js
 
 ### Features
 
@@ -257,15 +268,13 @@ App runs at [http://localhost:3000](http://localhost:3000).
 
 ---
 
-
 ---
 
 ## Future Protocol: TLD (Trustless Legacy Distribution)
 
 > **This is our vision for the next generation of ChainZap.**
 
-![image](https://github.com/user-attachments/assets/c738eb7f-683a-411e-967f-b3d5792dde98)
-
+![ChainZap TLD Protocol Flow](public/images/futurearchitecture.png)
 
 ### Planned Features
 
@@ -285,10 +294,18 @@ App runs at [http://localhost:3000](http://localhost:3000).
 
 ---
 
-**Ready to plan your legacy? Try ChainZap today, and stay tuned for the next evolution of trustless digital inheritance!**
----
-## Troubleshooting & FAQ
+## Developer Contact Info
 
+For questions, support, or contributions, contact:
+
+- Debanjan Mondal — debanjanmondalk2005@gmail.com — [GitHub](https://github.com/Debanjannnn)
+- Kaushik Samadder — kaushiksamadder2003work@gmail.com — [GitHub](https://github.com/Kaushik2003)
+
+---
+
+## **Ready to plan your legacy? Try ChainZap today, and stay tuned for the next evolution of trustless digital inheritance!**
+
+## Troubleshooting & FAQ
 
 **Wallet not connecting?**
 
